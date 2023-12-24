@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TextInput, Image, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Image, ScrollView, StyleSheet } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Home = () => {
@@ -69,31 +69,28 @@ const Home = () => {
             </View>
 
             <Text style={styles.populerText}>Populer</Text>
-            <View style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                marginTop: 1,
-            }}>
-                <View>
-                    <View style={styles.additionalView}>
-                        <Image
-                            source={require('../image/3.png')}
-                            style={styles.additionalImage}
-                        />
-                        <Text style={[styles.additionalText, { color: '#E966A0', fontSize: 25 }]}>CORNETTO OREO</Text>
+            <ScrollView
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                contentContainerStyle={{ paddingLeft: 20, paddingRight: 20 }}
+            >
+                <View style={styles.additionalView}>
+                    <Image
+                        source={require('../image/3.png')}
+                        style={styles.additionalImage}
+                    />
+                    <Text style={[styles.additionalText, { color: '#E966A0', fontSize: 25 }]}>CORNETTO OREO</Text>
 
-                        <View style={styles.additionalRow}>
-                            <View style={styles.iconRow}>
-                                <Ionicons name="star" size={25} color="#E966A0" style={styles.additionalIcon} />
-                                <Ionicons name="star" size={25} color="#E966A0" style={styles.additionalIcon} />
-                                <Ionicons name="star" size={25} color="#E966A0" style={styles.additionalIcon} />
-                                <Ionicons name="star" size={25} color="#E966A0" style={styles.additionalIcon} />
-                                <Ionicons name="star" size={25} color="#E966A0" style={styles.additionalIcon} />
-                            </View>
-
-                            <Text style={[styles.additionalText, { color: '#E966A0', fontSize: 25, alignSelf: 'center' }]}>Rp 20k</Text>
+                    <View style={styles.additionalRow}>
+                        <View style={styles.iconRow}>
+                            <Ionicons name="star" size={25} color="#E966A0" style={styles.additionalIcon} />
+                            <Ionicons name="star" size={25} color="#E966A0" style={styles.additionalIcon} />
+                            <Ionicons name="star" size={25} color="#E966A0" style={styles.additionalIcon} />
+                            <Ionicons name="star" size={25} color="#E966A0" style={styles.additionalIcon} />
+                            <Ionicons name="star" size={25} color="#E966A0" style={styles.additionalIcon} />
                         </View>
+
+                        <Text style={[styles.additionalText, { color: '#E966A0', fontSize: 25, alignSelf: 'center' }]}>Rp 20k</Text>
                     </View>
                 </View>
                 <View style={styles.additionalView}>
@@ -115,9 +112,8 @@ const Home = () => {
                         <Text style={[styles.additionalText, { color: '#E966A0', fontSize: 25, alignSelf: 'center' }]}>Rp 20k</Text>
                     </View>
                 </View>
-            </View>
-
-
+                {/* Tambahkan view tambahan di sini sesuai kebutuhan */}
+            </ScrollView>
         </View>
     );
 };
@@ -136,8 +132,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     icon: {
-        marginRight:
-            10,
+        marginRight: 10,
     },
     textContainer: {
         flex: 1,
@@ -183,7 +178,8 @@ const styles = StyleSheet.create({
         width: 66,
         backgroundColor: '#FED9ED',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent:
+            'center',
         borderRadius: 10,
     },
     image: {
